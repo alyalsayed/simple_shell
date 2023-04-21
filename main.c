@@ -12,22 +12,22 @@
  */
 int main(int argc, char **argv, char **envp)
 {
-	int ac = (argc - 1), i = 0;
-	char **av;
-	if (argc > 1)
+int ac = (argc - 1), i = 0;
+char **av;
+if (argc > 1)
+{
+	av = malloc(sizeof(char *) * ac);
+	checkalloc(av);
+	while (i < argc)
 	{
-		av = malloc(sizeof(char *) * ac);
-		checkalloc(av);
-		while (i < argc)
-		{
-			av[i] = argv[i + 1];
-			i++;
-		}
-		av[i] = NULL;
-		exec(av, envp);
+		av[i] = argv[i + 1];
+		i++;
 	}
-	else
-		launch_shell(envp);
+	av[i] = NULL;
+	exec(av, envp);
+}
+else
+	launch_shell(envp);
 
-	return (0);
+return (0);
 }
