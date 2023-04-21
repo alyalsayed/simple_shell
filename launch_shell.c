@@ -8,10 +8,12 @@
 */
 void launch_shell(char **env)
 {
-	char *command;
-	while (1)
-	{
-		printf("$ ");
-		command = readline();
-	}
+char *command;
+(void)env;
+while (1)
+{
+	printf("$ ");
+	command = readline();
+	printf("%s\n", command);
+}
 }
