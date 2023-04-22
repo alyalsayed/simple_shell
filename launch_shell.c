@@ -3,17 +3,19 @@
 
 /**
  * launch_shell - Launch the shell
- * @env: Environment variable
  * Return: 1 if success or 0 if failed
 */
-void launch_shell(char **env)
+void launch_shell(void)
 {
 char *command;
-(void)env;
+char **args;
 while (1)
 {
 	printf("$ ");
 	command = readline();
-	printf("%s\n", command);
+	args = split(command);
+	if (args[0] == NULL)
+		continue;
+	exec(args);
 }
 }

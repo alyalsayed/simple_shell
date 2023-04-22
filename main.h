@@ -1,11 +1,13 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+extern char **environ;
+
 void checkalloc(void *ptr);
 char **split(char *str);
 char *readline(void);
-void launch_shell(char **env);
-void exec(char **commands, char **env);
+void launch_shell(void);
+void exec(char **commands);
 void (*get_built_in_function(char *))(char **);
 void exit_shell(char **args);
 /**
