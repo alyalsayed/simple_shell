@@ -2,6 +2,7 @@
 #include <sys/wait.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include "main.h"
 
 /**
@@ -13,6 +14,7 @@ void exec(char **commands)
 {
 	__pid_t pid;
 	int status;
+	char bin[64] = "/bin/";
 	if (get_built_in_function(commands[0]))
 		get_built_in_function(commands[0])(commands);
 	else
@@ -25,7 +27,9 @@ void exec(char **commands)
 		}
 		else if (pid == 0)
 		{
-			if (execvp(commands[0], commands) == -1)
+			if (strstr(commands[0], bin) == NULL)
+				commands[0] = strcat(bin, commands[0]);
+			if (execve(commands[0], commands, environ) == -1)
 				perror("Error during command execution");
 			exit(EXIT_FAILURE);
 		}
