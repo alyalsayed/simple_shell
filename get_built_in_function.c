@@ -1,4 +1,3 @@
-#include <string.h>
 #include "main.h"
 
 /**
@@ -12,12 +11,13 @@ void (*get_built_in_function(char *command_name))(char **)
 	/* Array of our built-in commands name and their function */
 	built_in_command_t commands[] = {
 		{"exit", exit_shell},
+		{"env", print_env},
 		{NULL, NULL},
 	};
 
 	while (commands[i].name)
 	{
-		if (strcmp(command_name, commands[i].name) == 0)
+		if (_strcmp(command_name, commands[i].name) == 0)
 			return (commands[i].function);
 		i++;
 	}
