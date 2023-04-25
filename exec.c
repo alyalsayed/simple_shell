@@ -27,7 +27,7 @@ else
 	}
 	else if (pid == 0)
 	{
-		if (strstr(commands[0], bin) == NULL)
+		if (_strstr(commands[0], bin) == NULL)
 			commands[0] = strcat(bin, commands[0]);
 		if (execve(commands[0], commands, environ) == -1)
 			perror(commands[0]);
