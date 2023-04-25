@@ -6,6 +6,7 @@
 extern char **environ;
 int _strcmp(char *__s1, char *__s2);
 int _atoi(char *s);
+size_t _strlen(char *s);
 void checkalloc(void *ptr);
 char **split(char *str);
 char *readline(void);

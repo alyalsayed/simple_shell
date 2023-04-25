@@ -30,7 +30,8 @@ else
 		if (strstr(commands[0], bin) == NULL)
 			commands[0] = strcat(bin, commands[0]);
 		if (execve(commands[0], commands, environ) == -1)
-			perror("Error during command execution");
+			perror(commands[0]);
+		free(commands);
 		exit(EXIT_FAILURE);
 	}
 	else
