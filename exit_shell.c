@@ -1,7 +1,7 @@
 #include <stdlib.h>
 
 /**
- * exit - Exit the shell
+ * exit_shell - Exit the shell
  * @args: Passed arguments
  * Return: void
 */
