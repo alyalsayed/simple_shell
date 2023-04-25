@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include "main.h"
 
 /**
  * exit_shell - Exit the shell
@@ -7,6 +8,8 @@
 */
 void exit_shell(char **args)
 {
-	free(args);
+	if (args[1])
+		exit(_atoi(args[1]));
 	exit(EXIT_SUCCESS);
+	free(args);
 }
