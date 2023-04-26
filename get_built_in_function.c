@@ -3,6 +3,7 @@
 /**
  * get_built_in_function - get the built-in function
  * @command_name: the name of the command
+ *
  * Return: the command's function or NULL
  */
 void (*get_built_in_function(char *command_name))(char **)
