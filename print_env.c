@@ -4,6 +4,7 @@
 
 /**
  * print_env - List env variables
+ * @args: Arguments passed
  * Return: void
 */
 void print_env(char **args)
