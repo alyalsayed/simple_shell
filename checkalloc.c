@@ -3,15 +3,16 @@
 #include <stdio.h>
 
 /**
- * checkalloc - Check if an allocation work
- * @ptr: Pointer to check
+ * checkalloc - check if an allocation worked
+ * @ptr: pointer to check
+ *
  * Return: void or exit with error if allocation failed
-*/
+ */
 void checkalloc(void *ptr)
 {
 	if (ptr == NULL)
 	{
-		dprintf(STDERR_FILENO, "ash: Error during memory allocation.");
+		dprintf(STDERR_FILENO, "ash: Error during memory allocation.\n");
 		exit(1);
 	}
 }
