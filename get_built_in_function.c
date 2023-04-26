@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * get_built_in_function - Run built-in commands
- * @command_name: The name of the command
+ * get_built_in_function - get the built-in function
+ * @command_name: the name of the command
  * Return: the command's function or NULL
-*/
+ */
 void (*get_built_in_function(char *command_name))(char **)
 {
 	int i = 0;
@@ -21,5 +21,6 @@ void (*get_built_in_function(char *command_name))(char **)
 			return (commands[i].function);
 		i++;
 	}
+
 	return (NULL);
 }
